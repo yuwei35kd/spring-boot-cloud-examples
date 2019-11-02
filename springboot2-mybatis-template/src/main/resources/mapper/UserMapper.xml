@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="yuwei35kd.springboot2.mybatis.template.dao.UserDao" >
+    <sql id="BASE_COLUMN">
+        user_id,user_name,password,phone
+    </sql>
+
+    <insert id="insert" parameterType="User">
+        <selectKey keyProperty="userId" resultType="int" order="BEFORE">
+            select nextval('seq_test');
+        </selectKey>
+        INSERT INTO ${baseTable}
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            user_id,user_name,password,
+            <if test="user.phone != null">
+                phone,
+            </if>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{userId},
+            #{user.userName, jdbcType=VARCHAR},#{user.password, jdbcType=VARCHAR},
+            <if test="user.phone != null">
+                #{user.phone, jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectUsers" resultType="User">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM ${baseTable}
+    </select>
+
+</mapper>
