@@ -8,6 +8,9 @@ https://blog.csdn.net/east_mrchiu/article/details/70184652
 mysql数据库实现nextval函数
 https://www.jianshu.com/p/104a216e7db3
 
+【mybatis】认识selectKey
+https://www.cnblogs.com/xinruyi/p/11073258.html
+
 下面是需要提前执行的sql
 ```
 
