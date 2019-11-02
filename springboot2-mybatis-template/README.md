@@ -11,6 +11,9 @@ https://www.jianshu.com/p/104a216e7db3
 【mybatis】认识selectKey
 https://www.cnblogs.com/xinruyi/p/11073258.html
 
+springboot2.0 整合 Mybatis (springboot2.0版本)
+https://www.jianshu.com/p/5cd772c07041
+
 下面是需要提前执行的sql
 ```
 
